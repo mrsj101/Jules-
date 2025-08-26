@@ -211,29 +211,22 @@
             fill: white;
         }
 
-        /* --- Footer centering fix (from user feedback via ChatGPT-5) --- */
+        /* --- Footer centering fix (overrides) --- */
         .main-footer .footer-content{
-          display: flex;
-          flex-direction: column;
-          align-items: center;   /* ממרכז אופקית את כל הילדים */
-          text-align: center;    /* גובר על text-align:right של ה-body */
+          display:flex;
+          flex-direction:column;
+          align-items:center;   /* ממרכז אופקית את כל הילדים */
+          text-align:center;    /* גובר על text-align:right של ה-body */
         }
-
         .main-footer .footer-contact-links{
-          display: flex;         /* עדיף מ-inline-flex כאן */
-          justify-content: center;
-          margin-inline: auto;   /* מבטיח שהשורה עצמה ממורכזת */
+          display:flex;         /* override inline-flex */
+          align-items:center;
+          justify-content:center;
+          gap:0.75rem;
+          margin:0.5rem 0;
         }
-
-        .main-footer p{
-          text-align: center;    /* ליתר ביטחון על <p> ספציפית בפוטר */
-        }
-
-        /* כדי שהמספר יוצג נכון בתוך הקשר RTL */
-        #footer-phone-link{
-          direction: ltr;
-          unicode-bidi: bidi-override;
-        }
+        .main-footer p{ text-align:center; }
+        #footer-phone-link{ direction:ltr; unicode-bidi:bidi-override; }
     </style>
 </head>
 <body data-theme="blue-trust" data-effects="bold">
