@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- QUICK EDIT ZONE - לשינויים מהירים -->
+    <script>
+        const SITE_CONFIG = {
+            title: "הזדמנות נדירה בראשון לציון: קרקע להשקעה",
+            description: "מחירי הדירות בורחים לכם? קונים היום קרקע בטאבו במחיר של פעם. קרקע במיקום מנצח בראשון לציון, בקרבת המטרו העתידי, קניון עזריאלי וכביש 431.",
+            theme: "blue-trust", // clean | luxury | blue-trust
+            effects: "bold", // off | soft | bold
+            phone: "0505265888",
+            whatsapp: "0526232525",
+            ogImage: "https://i.imgur.com/1Opug3F.jpeg"
+        };
+    </script>
+
+    <!-- META תגים חובה -->
+    <title>הזדמנות נדירה בראשון לציון: קרקע להשקעה</title>
+    <meta name="description" content="מחירי הדירות בורחים לכם? קונים היום קרקע בטאבו במחיר של פעם. קרקע במיקום מנצח בראשון לציון, בקרבת המטרו העתידי, קניון עזריאלי וכביש 431.">
+    <meta name="theme-color" content="#0ea5e9">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://example.com"> <!-- יש לעדכן לדומיין הסופי -->
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="הזדמנות נדירה בראשון לציון: קרקע להשקעה">
+    <meta property="og:description" content="מחירי הדירות בורחים לכם? קונים היום קרקע בטאבו במחיר של פעם.">
+    <meta property="og:image" content="https://i.imgur.com/1Opug3F.jpeg">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="הזדמנות נדירה בראשון לציון: קרקע להשקעה">
+    <meta name="twitter:description" content="מחירי הדירות בורחים לכם? קונים היום קרקע בטאבו במחיר של פעם.">
+    <meta name="twitter:image" content="https://i.imgur.com/1Opug3F.jpeg">
+
+    <style>
+        /* --- General Setup & Resets --- */
+        :root {
+            --primary: #0ea5e9;
+            --secondary: #1e40af;
+            --text-dark: #1f2937;
+            --text-light: #f9fafb;
+            --background: #ffffff;
+            --surface: #f9fafb;
+            --radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --font-main: 'Arial', sans-serif;
+        }
+
+        /* --- Theme Presets --- */
+        [data-theme="clean"] { --primary: #2563eb; --secondary: #64748b; --radius: 8px; --shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        [data-theme="luxury"] { --primary: #d97706; --secondary: #1f2937; --text-light: #fdfbf7; --background: #111827; --surface: #1f2937; --radius: 12px; --shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        [data-theme="blue-trust"] { --primary: #0ea5e9; --secondary: #1e40af; --radius: 6px; --shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-main);
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+            text-align: right;
+        }
+        main { display: block; }
+        img { max-width: 100%; height: auto; display: block; }
+        h1, h2, h3 { line-height: 1.3; font-weight: 700; text-align: center; margin-bottom: 1rem; color: var(--secondary); }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); }
+        h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+        p { margin-bottom: 1rem; text-align: center; max-width: 65ch; margin-left: auto; margin-right: auto;}
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+        section { padding: 4rem 0; scroll-margin-top: 80px; }
+        section:nth-child(even) { background-color: var(--surface); }
+
+        /* --- Effects Presets --- */
+        .animate-on-scroll { opacity: 0; transform: translateY(40px); }
+        [data-effects="off"] .animate-on-scroll { transition: none !important; animation: none !important; opacity: 1; transform: none; }
+        [data-effects="soft"] .animate-on-scroll.visible { transition: all 0.6s ease-out; opacity: 1; transform: translateY(0); }
+        [data-effects="bold"] .animate-on-scroll.visible { transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); opacity: 1; transform: translateY(0) scale(1); }
+        [data-effects="bold"] .animate-on-scroll { transform: translateY(50px) scale(0.95); }
+
+        /* --- Accessibility --- */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+        }
+        .skip-link { position: absolute; top: -40px; left: 6px; background: var(--primary); color: white; padding: 8px; text-decoration: none; border-radius: 4px; z-index: 9999; }
+        .skip-link:focus { top: 6px; }
+        *:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: var(--radius); }
+
+        /* --- Header --- */
+        .main-header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+        .main-header.scrolled { box-shadow: var(--shadow); background-color: rgba(255, 255, 255, 0.95); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--secondary); text-decoration: none; }
+        .header-cta a {
+            text-decoration: none;
+            color: var(--text-light);
+            background-color: var(--primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius);
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .header-cta a:hover { background-color: var(--secondary); }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 6rem 0;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.imgur.com/1Opug3F.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+        }
+        .hero h1, .hero p { color: var(--text-light); text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; max-width: 50ch; }
+
+        /* --- Form --- */
+        .contact-form {
+            background-color: var(--background);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 2rem auto 0;
+            color: var(--text-dark);
+        }
+        .contact-form h3 { color: var(--secondary); }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: var(--radius);
+            font-size: 1rem;
+        }
+        .form-group input:focus { border-color: var(--primary); }
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            background-color: var(--primary);
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover { background-color: var(--secondary); }
+        #form-errors { color: #d9534f; margin-top: 1rem; }
+
+        /* --- Benefits Section --- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .benefit-card {
+            background-color: var(--background);
+            padding: 2rem;
+            text-align: center;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .benefit-card .icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .benefit-card h3 { font-size: 1.3rem; color: var(--secondary); }
+
+        /* --- Proof Gallery --- */
+        .proof-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .proof-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 3px solid white;
+        }
+
+        /* --- Final CTA --- */
+        .final-cta {
+            background-color: var(--secondary);
+            color: var(--text-light);
+        }
+        .final-cta h2, .final-cta p { color: var(--text-light); }
+        .final-cta .contact-form { background-color: var(--surface); }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .footer-content p { color: #ccc; font-size: 0.9rem; margin: 0.5rem 0; }
+        .footer-content a { color: white; text-decoration: none; }
+        .footer-content a:hover { text-decoration: underline; }
+
+        /* --- Toast --- */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #28a745;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+        }
+        .toast.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -20px);
+        }
+        .toast.error { background-color: #dc3545; }
+
+    </style>
+</head>
+<body data-theme="blue-trust" data-effects="bold">
+    <a href="#main" class="skip-link">דלג לתוכן</a>
+
+    <header class="main-header" id="header">
+        <div class="container header-content">
+            <a href="#" class="logo">הזדמנות בראשון לציון</a>
+            <div class="header-cta">
+                <a id="header-phone-link" href="">חייג עכשיו</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container">
+                <h1 class="animate-on-scroll">מחירי הדירות בורחים לכם? קונים היום קרקע בטאבו במחיר של פעם</h1>
+                <p class="animate-on-scroll">הזדמנות נדירה לרכישת קרקע פרטית בטאבו במיקום המבוקש ביותר בראשון לציון, צמוד למטרו העתידי ולקניון עזריאלי. השקעה חכמה במחיר של 249,000 ש"ח בלבד.</p>
+
+                <div class="contact-form animate-on-scroll">
+                    <h3>רוצים לשמוע עוד? השאירו פרטים ונחזור אליכם</h3>
+                    <form id="contactForm" name="contact" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact">
+                        <div class="form-group">
+                            <label for="name">שם מלא</label>
+                            <input type="text" id="name" name="name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">טלפון</label>
+                            <input type="tel" id="phone" name="phone" required autocomplete="tel">
+                        </div>
+                        <input type="hidden" name="utm_source" id="utm_source">
+                        <input type="hidden" name="utm_campaign" id="utm_campaign">
+                        <p class="h-captcha" data-netlify-recaptcha="true"></p>
+                        <button type="submit" class="submit-btn">כן, אני רוצה לשמוע עוד</button>
+                        <div id="form-errors" role="alert" style="display:none;"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits">
+            <div class="container">
+                <h2>למה זאת ההשקעה הבאה שלכם?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="icon">📜</div>
+                        <h3>קרקע פרטית בטאבו</h3>
+                        <p>הקרקע נרשמת על שמכם בטאבו, ומעניקה לכם ביטחון מלא ובעלות פרטית על הנכס.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="icon">🚇</div>
+                        <h3>בקרבת המטרו העתידי</h3>
+                        <p>מיקום אסטרטגי צמוד לקו המטרו העתידי שיקפיץ את ערך הנכס בשנים הקרובות.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="icon">💰</div>
+                        <h3>המחיר הטוב באזור</h3>
+                        <p>הזדמנות חד פעמית לרכוש קרקע במחיר הנמוך ביותר באזור, לפני עליית המחירים הצפויה.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="icon">✅</div>
+                        <h3>תקן 22 והסכם שיתוף</h3>
+                        <p>הפרויקט מאורגן ומסודר עם תקן 22 והסכם שיתוף המבטיח שקט וודאות למשקיעים.</p>
+                    </div>
+                     <div class="benefit-card animate-on-scroll">
+                        <div class="icon">🛍️</div>
+                        <h3>צמוד לקניון עזריאלי</h3>
+                        <p>מרחק הליכה קצר ממרכזי קניות ובילוי, מה שמבטיח איכות חיים גבוהה וביקושים ערים.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="icon">🚗</div>
+                        <h3>נגישות לכביש 431</h3>
+                        <p>יציאה מהירה ונוחה לכביש 431 ולעורקי התחבורה הראשיים של גוש דן.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proof">
+            <div class="container">
+                <h2>מיקום, תוכניות ותשריטים</h2>
+                <p>ראו בעצמכם את המיקום המדויק, הגוש והחלקה, והפוטנציאל האדיר של הקרקע.</p>
+                <div class="proof-gallery">
+                    <img src="https://i.imgur.com/QxVrTni.jpeg" alt="תשריט חלקה 91" class="animate-on-scroll" loading="lazy" decoding="async">
+                    <img src="https://i.imgur.com/mqqPyTF.png" alt="מפת לוויין של החלקה" class="animate-on-scroll" loading="lazy" decoding="async">
+                    <img src="https://i.imgur.com/SYUHQeA.jpeg" alt="מיקום על מפת לוויין" class="animate-on-scroll" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container">
+                <h2 class="animate-on-scroll">אל תפספסו את ההזדמנות</h2>
+                <p class="animate-on-scroll">המחירים צפויים לעלות בקרוב. השאירו פרטים עכשיו כדי לתאם פגישה ולקבל את כל המידע על ההשקעה שתשנה את עתידכם.</p>
+                <div class="contact-form animate-on-scroll">
+                    <h3>שיחה עם יועץ השקעות - ללא התחייבות</h3>
+                     <form id="contactForm2" name="contact2" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact2">
+                        <div class="form-group">
+                            <label for="name2">שם מלא</label>
+                            <input type="text" id="name2" name="name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone2">טלפון</label>
+                            <input type="tel" id="phone2" name="phone" required autocomplete="tel">
+                        </div>
+                        <input type="hidden" name="utm_source" id="utm_source2">
+                        <input type="hidden" name="utm_campaign" id="utm_campaign2">
+                        <p class="h-captcha" data-netlify-recaptcha="true"></p>
+                        <button type="submit" class="submit-btn">שלחו לי פרטים</button>
+                        <div id="form-errors2" role="alert" style="display:none;"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>לפרטים נוספים, ניתן ליצור קשר טלפוני:</p>
+            <p>
+                <a id="footer-phone-link" href=""></a> | <a id="footer-whatsapp-link" href="">WhatsApp</a>
+            </p>
+            <p>&copy; 2024 כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Initialize on load ---
+        window.addEventListener('load', () => {
+            // Populate dynamic content from SITE_CONFIG
+            document.title = SITE_CONFIG.title;
+            document.querySelector('meta[name="description"]').setAttribute('content', SITE_CONFIG.description);
+            document.querySelector('meta[property="og:title"]').setAttribute('content', SITE_CONFIG.title);
+            document.querySelector('meta[property="og:description"]').setAttribute('content', SITE_CONFIG.description);
+            document.querySelector('meta[property="og:image"]').setAttribute('content', SITE_CONFIG.ogImage);
+            document.querySelector('meta[name="twitter:title"]').setAttribute('content', SITE_CONFIG.title);
+            document.querySelector('meta[name="twitter:description"]').setAttribute('content', SITE_CONFIG.description);
+            document.querySelector('meta[name="twitter:image"]').setAttribute('content', SITE_CONFIG.ogImage);
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', getComputedStyle(document.body).getPropertyValue('--primary'));
+
+            const phoneLink = `tel:${SITE_CONFIG.phone}`;
+            document.getElementById('header-phone-link').href = phoneLink;
+            document.getElementById('footer-phone-link').href = phoneLink;
+            document.getElementById('footer-phone-link').textContent = SITE_CONFIG.phone;
+
+            const whatsappLink = `https://wa.me/${SITE_CONFIG.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('שלום, התעניינתי בקרקע בראשון לציון.')}`;
+            document.getElementById('footer-whatsapp-link').href = whatsappLink;
+
+            // Set body attributes
+            document.body.setAttribute('data-theme', SITE_CONFIG.theme);
+            document.body.setAttribute('data-effects', SITE_CONFIG.effects);
+
+            // Initialize functionalities
+            captureUTM();
+            observeElements();
+            handleStickyHeader();
+            handleFormSubmission('contactForm', 'form-errors');
+            handleFormSubmission('contactForm2', 'form-errors2', true); // isSecondForm = true
+        });
+
+        // --- UTM Tracking ---
+        const captureUTM = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmSource = urlParams.get('utm_source');
+            const utmCampaign = urlParams.get('utm_campaign');
+
+            document.getElementById('utm_source').value = utmSource || '';
+            document.getElementById('utm_campaign').value = utmCampaign || '';
+            document.getElementById('utm_source2').value = utmSource || '';
+            document.getElementById('utm_campaign2').value = utmCampaign || '';
+        };
+
+        // --- IntersectionObserver for animations ---
+        const observeElements = () => {
+            if (SITE_CONFIG.effects === 'off') return;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+        };
+
+        // --- Sticky header ---
+        const handleStickyHeader = () => {
+            const header = document.getElementById('header');
+            if (!header) return;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }, { passive: true });
+        };
+
+        // --- Toast Notification ---
+        const showToast = (message, type = 'success') => {
+            const toast = document.createElement('div');
+            toast.setAttribute('role', 'status');
+            toast.setAttribute('aria-live', 'polite');
+            toast.className = `toast ${type}`;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => document.body.removeChild(toast), 300);
+            }, 3000);
+        };
+
+        // --- Form Submission ---
+        const handleFormSubmission = (formId, errorDivId, isSecondForm = false) => {
+            const form = document.getElementById(formId);
+            if (!form) return;
+            const errorDiv = document.getElementById(errorDivId);
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                errorDiv.textContent = '';
+                errorDiv.style.display = 'none';
+
+                const requiredFields = form.querySelectorAll('[required]');
+                let hasErrors = false;
+
+                requiredFields.forEach(field => {
+                    field.setAttribute('aria-invalid', 'false');
+                    if (!field.value.trim()) {
+                        hasErrors = true;
+                        field.setAttribute('aria-invalid', 'true');
+                    }
+                });
+
+                if (hasErrors) {
+                    errorDiv.textContent = 'אנא מלא את כל השדות הנדרשים.';
+                    errorDiv.style.display = 'block';
+                    requiredFields[0].focus();
+                    return;
+                }
+
+                const formData = new FormData(form);
+                fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString(),
+                })
+                .then(() => {
+                    showToast('הפרטים נשלחו בהצלחה! ניצור קשר בהקדם.');
+                    form.reset();
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'form_submit', {
+                            'event_category': 'Lead',
+                            'event_label': isSecondForm ? 'Bottom Form' : 'Top Form'
+                        });
+                    }
+                })
+                .catch((error) => {
+                    showToast('אירעה שגיאה בשליחת הטופס. אנא נסה שוב.', 'error');
+                });
+            });
+        };
+    </script>
+</body>
+</html>
